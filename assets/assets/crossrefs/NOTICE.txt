@@ -1,0 +1,28 @@
+Cross references: OpenBible.info Bible Cross References
+https://openbible.info/labs/cross-references/
+Original data: https://a.openbible.info/data/cross-references.zip
+Snapshot header: #www.openbible.info CC-BY 2026-10-26
+License: Creative Commons Attribution 4.0 International (CC-BY-4.0.txt).
+The original, unmodified download is openbible-source.zip.
+
+Changes: KJV coordinates converted to Russian Synodal coordinates; target
+ranges split by chapter; duplicate edges merged using maximum community vote;
+invalid and ambiguous coordinates omitted. No reference text was copied.
+The displayed verse text comes from the user's selected Bible translation.
+
+Versification data: CrossWire JSword, Copyright CrossWire Bible Society,
+2013-2016 (Synodal.properties), 2012-2016 (SystemKJV.java).
+https://github.com/crosswire/jsword
+https://raw.githubusercontent.com/crosswire/jsword/master/src/main/resources/org/crosswire/jsword/versification/Synodal.properties
+https://raw.githubusercontent.com/crosswire/jsword/master/src/main/java/org/crosswire/jsword/versification/system/SystemKJV.java
+License: GNU Lesser General Public License version 2.1 or later (LGPL-2.1.txt).
+Both complete original source files are distributed unchanged beside the index.
+Only the published data (table and verse counts) was read by the independent
+Python builder. JSword is not compiled, linked, or executed in this application.
+The generated index is replaceable: rerun tools/build_cross_references.py using
+these source files and an updated openbible-source.zip.
+
+The index is editorial community data, not a comprehensive or authoritative
+interpretation. Rankings are community votes. Numbering in translations other
+than Russian Synodal can differ. Consult the surrounding chapter.
+Known excluded mappings and a checksum are recorded in build-report.json.

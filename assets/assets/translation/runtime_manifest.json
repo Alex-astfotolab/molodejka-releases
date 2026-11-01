@@ -1,0 +1,70 @@
+{
+  "runtime": [
+    {
+      "size": 11441267,
+      "filename": "python.zip",
+      "url": "https://www.python.org/ftp/python/3.13.17/python-3.13.17-embed-amd64.zip",
+      "id": "python",
+      "sha256": "9e35319bffedab8b36ad44d8f377cb4f1733bcec257a0b6d04d94f01486ddb38"
+    },
+    {
+      "size": 20371182,
+      "filename": "ctranslate2-4.8.4-cp313-cp313-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/37/ae/4fbe636b36fd4fd4266e309d050548c1ae0a23c88ef73ef89c6485db99d1/ctranslate2-4.8.4-cp313-cp313-win_amd64.whl",
+      "id": "ctranslate2",
+      "sha256": "d9523961651ac0f51e4e62d03307609ff93d828b32ae92dc8b14a7e55243f6f2"
+    },
+    {
+      "size": 1247987,
+      "filename": "sentencepiece-0.2.2-cp313-cp313-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/09/fa/d2d6369257fd2f0de616b1c7110b73fab409ef61b14f1b9e0010ed325914/sentencepiece-0.2.2-cp313-cp313-win_amd64.whl",
+      "id": "sentencepiece",
+      "sha256": "74f0ee601047c0c12a783088b51be4e6214a62ecd9e02278c477433cd16e0ed9"
+    },
+    {
+      "size": 12566113,
+      "filename": "numpy-2.5.4-cp313-cp313-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/90/8c/140a40398a66b4471211be1affdb6ed24c486d581bd28d07b7f2fcb69540/numpy-2.5.4-cp313-cp313-win_amd64.whl",
+      "id": "numpy",
+      "sha256": "8b4d2fd2d34e5f8c9235ee787de5631a37a28402b15cb80814df973d2be54129"
+    },
+    {
+      "size": 154090,
+      "filename": "pyyaml-6.0.3-cp313-cp313-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/97/c9/39d5b874e8b28845e4ec2202b5da735d0199dbe5b8fb85f91398814a9a46/pyyaml-6.0.3-cp313-cp313-win_amd64.whl",
+      "id": "PyYAML",
+      "sha256": "79005a0d97d5ddabfeeea4cf676af11e647e41d81c9a7722a193022accdb6b7c"
+    }
+  ],
+  "models": [
+    {
+      "size": 156239112,
+      "filename": "ru_en.argosmodel",
+      "url": "https://argos-net.com/v1/translate-ru_en-1_9.argosmodel",
+      "id": "ru-en",
+      "sha256": "e9ba8bf722d10a4a4c39f74289d5938fd47eac08dbe4ed0afd22d89445a5c3ac"
+    },
+    {
+      "size": 195746693,
+      "filename": "en_ru.argosmodel",
+      "url": "https://argos-net.com/v1/translate-en_ru-1_9.argosmodel",
+      "id": "en-ru",
+      "sha256": "591d743ae103752b88ffc38785c50421320f4eff93c8967e0d3d2e14d4e27811"
+    },
+    {
+      "size": 66585033,
+      "filename": "fr_en.argosmodel",
+      "url": "https://argos-net.com/v1/translate-fr_en-1_9.argosmodel",
+      "id": "fr-en",
+      "sha256": "3b3052fee6bb1e8e8e632a26a723eb2a2c7710dfe73ba61ffd9b83e85d4f14c1"
+    },
+    {
+      "size": 65472327,
+      "filename": "en_fr.argosmodel",
+      "url": "https://argos-net.com/v1/translate-en_fr-1_9.argosmodel",
+      "id": "en-fr",
+      "sha256": "3a65ed83364f4e7b06e30f9dd823db1934899ed3ce839e63f46dc7b09dc797b4"
+    }
+  ],
+  "schema": 1
+}

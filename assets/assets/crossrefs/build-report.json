@@ -1,0 +1,12 @@
+{
+  "source_rows": 344799,
+  "edges": 344971,
+  "invalid_source_rows": 19,
+  "excluded_mapping_lines": [
+    "Ps.12.6=Ps.13.5-Ps.12.6",
+    "Ps.89.1-Ps.89.17=Ps.90.0-Ps.90.17",
+    "Dan.3.34-Dan.3.100=?SongOfThreeChildren"
+  ],
+  "bytes": 5519544,
+  "sha256": "eca110bc89decfa1f2b6840035ea743fa051c27d3d31455fced684ecbd6ff622"
+}
