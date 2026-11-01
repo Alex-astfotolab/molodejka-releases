@@ -4,8 +4,8 @@ let youthReleaseWriter;
 // Capture and erase a one-use invitation before Flutter/worker network activity.
 function captureYouthInvitation(notify) {
   const invitation = new URLSearchParams(location.hash.slice(1)).get('join');
-  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   if (!invitation) return;
+  history.replaceState(null, '', location.pathname + location.search);
   window.youthInitialInvitation = invitation;
   if (notify) window.dispatchEvent(new Event('youth-invitation'));
 }
