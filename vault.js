@@ -2,16 +2,30 @@
 // the non-secret active database name, shared between launch contexts.
 let youthReleaseWriter;
 // Capture and erase a one-use invitation before Flutter/worker network activity.
-function captureYouthInvitation(notify) {
-  const invitation = new URLSearchParams(location.hash.slice(1)).get('join');
+let youthLastInvitation = null;
+let youthLastInvitationTime = 0;
+function captureYouthInvitation(notify, event) {
+  const hash = event?.newURL ? new URL(event.newURL).hash : location.hash;
+  const invitation = new URLSearchParams(hash.slice(1)).get('join');
   if (!invitation) return;
-  history.replaceState(null, '', location.pathname + location.search);
+  // External QR links are connection commands, not Flutter navigation routes.
+  // Listen in capture phase so popstate cannot rebuild/dispose the app root
+  // while it is saving data before joining the next host.
+  event?.stopImmediatePropagation();
+  if (new URLSearchParams(location.hash.slice(1)).has('join')) {
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+  const now = Date.now();
+  if (notify && invitation === youthLastInvitation && now - youthLastInvitationTime < 1000) return;
+  youthLastInvitation = invitation;
+  youthLastInvitationTime = now;
   window.youthInitialInvitation = invitation;
   if (notify) window.dispatchEvent(new Event('youth-invitation'));
 }
 window.youthInitialInvitation = null;
 captureYouthInvitation(false);
-window.addEventListener('hashchange', () => captureYouthInvitation(true));
+window.addEventListener('popstate', event => captureYouthInvitation(true, event), true);
+window.addEventListener('hashchange', event => captureYouthInvitation(true, event), true);
 window.youthAcquireWriter = () => new Promise((resolve, reject) => {
   if (!navigator.locks) { reject(new Error('Web Locks unavailable')); return; }
   navigator.locks.request('molodezhka-writer-v1', {mode:'exclusive', ifAvailable:true}, async lock => {
