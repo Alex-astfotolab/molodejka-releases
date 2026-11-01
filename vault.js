@@ -2,8 +2,16 @@
 // the non-secret active database name, shared between launch contexts.
 let youthReleaseWriter;
 // Capture and erase a one-use invitation before Flutter/worker network activity.
-window.youthInitialInvitation = new URLSearchParams(location.hash.slice(1)).get('join');
-if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+function captureYouthInvitation(notify) {
+  const invitation = new URLSearchParams(location.hash.slice(1)).get('join');
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  if (!invitation) return;
+  window.youthInitialInvitation = invitation;
+  if (notify) window.dispatchEvent(new Event('youth-invitation'));
+}
+window.youthInitialInvitation = null;
+captureYouthInvitation(false);
+window.addEventListener('hashchange', () => captureYouthInvitation(true));
 window.youthAcquireWriter = () => new Promise((resolve, reject) => {
   if (!navigator.locks) { reject(new Error('Web Locks unavailable')); return; }
   navigator.locks.request('molodezhka-writer-v1', {mode:'exclusive', ifAvailable:true}, async lock => {
